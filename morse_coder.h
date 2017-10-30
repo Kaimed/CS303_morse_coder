@@ -49,9 +49,9 @@ public:
   morse_coder();
 
   std::string decode(const std::string& input);
-  std::string encode(const std::string& input);
+  //std::string encode(const std::string& input);
 
-  void build_Mtree();
+  //void build_Mtree();
 
 
 };
