@@ -40,18 +40,25 @@ public:
 
 
 class morse_coder{
+    
   std::map<char,std::string> encoder_dict;
   std::map<std::string,char> decoder_dict;
   //encoded or decoded result
   std::string result;
-
+  MBTNode<char>* Root;
 public:
   morse_coder();
 
   std::string decode(const std::string& input);
+    //decode helper function
+    void find_in_tree(char result,std::string& input,MBTNode<char>* local_root);
+    
+    
   std::string encode(const std::string& input);
-
-  void build_Mtree();
+    
+  //returns a pointer to the root
+    void build_Mtree(MBTNode<char>* local_root,std::ifstream& fin);
+    void place_Node(const char value,MBTNode<char>* local_root,std::string& input);
 
 
 };
