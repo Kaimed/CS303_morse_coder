@@ -11,7 +11,7 @@
   im familiar calling it a dictionary,
   but key lookup will be very useful for encoding
 */
-#include <locale> //for std::tolower()
+#include <locale> //for tolower()
 
 
 //"MBTNode" stands for Morse Bin Tree
