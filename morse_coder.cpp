@@ -1,5 +1,6 @@
 #include "morse_coder.h"
 
+//INIT
 morse_coder::morse_coder(){
   std::ifstream fin("morse.txt");
   Root = new MBTNode<char>(NULL,NULL,'\0');
@@ -18,12 +19,14 @@ morse_coder::morse_coder(){
 };
 
 
-//BIG-O = O(
+//WILL TAKE A STRING INPUT IN MORSE CODE (WITH SPACE DELIMITERS)
+//WILL TRANSLATE MORSE CODE INPUT TO ENGLISH OUTPUT
+//BIG-O = O(N^2)
 std::string morse_coder::decode(const std::string& input){
     std::string holder;
     std::istringstream token(input);
     while(token>>holder){
-		char letter = NULL;
+	char letter = NULL;
         find_in_tree(letter,holder, Root);
         result += letter;
     }
