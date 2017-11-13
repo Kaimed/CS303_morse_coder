@@ -18,11 +18,12 @@
 template <typename T>
 class MBTNode{
 public:
+	
+  //data fields
   MBTNode* left;
   MBTNode* right;
-
   T data;
-
+  //constructors
   MBTNode(){
 	  left = NULL;
 	  right = NULL;
@@ -37,20 +38,22 @@ public:
 
 
 class morse_coder{
-    
+  //private data fields
   std::map<char,std::string> encoder_dict;
   std::map<std::string,char> decoder_dict;
   //encoded or decoded result
   std::string result;
   MBTNode<char>* Root;
 public:
+  //constructor
   morse_coder();
-
+  
+  //converts english to morse code
   std::string decode(const std::string& input);
     //decode helper function
     void find_in_tree(char& result,std::string& input,MBTNode<char>* local_root);
     
-    
+  //converts morse code to english variant
   std::string encode(const std::string& input);
     
   //returns a pointer to the root
