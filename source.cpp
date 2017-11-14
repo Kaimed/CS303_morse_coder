@@ -4,8 +4,8 @@ using namespace std;
 
 int main(){
   morse_coder myCoder;
-  const string in(".._. .._ _._. _._");
-  const string out("Fuck");
+  const string in("... ___ ...");
+  const string out("SOS");
   cout << "Original: "
 	   << in
 	   <<"\nDecoded: "
