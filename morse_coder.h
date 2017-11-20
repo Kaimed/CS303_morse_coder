@@ -53,6 +53,8 @@ public:
     //decode helper function
     void find_in_tree(char& result,std::string& input,MBTNode<char>* local_root);
     
+    std::string translate(const std::string input);
+
   //converts morse code to english variant
   std::string encode(const std::string& input);
     
