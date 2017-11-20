@@ -99,21 +99,30 @@ void morse_coder::place_Node(const char value,MBTNode<char>* local_root,std::str
     }
 }
 
-
-//COMPLEXITY:
-//BIG-O = O(NLOG(N)) WHERE N == # OF LETTERS IN CODE
+//N == INPUT.LENGTH(); EACH DICTIONARY LOOKUP HAS O(LOG(N)) COMPLEXITY
+//BIG-O == O(NLOG(N)) 
 std::string morse_coder::encode(const std::string& input){
-	std::string result;
+	result = "";
 	std::istringstream tokens(input);
 	char c;
 	while (tokens >> c) {
-		//std::cout << c << '\t' << encoder_dict[tolower(c)]<<'\n';
 
-		result += encoder_dict[tolower(c)];
+		//std::cout << c << '\t' << encoder_dict[tolower(c)]<<'\n';
+		if (encoder_dict.find(tolower(c)) != encoder_dict.end()) {
+			result += encoder_dict[tolower(c)];
+			result += ' ';
+		}
+		else {
+			std::cout << "Non-English character encountered when encoding.... exiting.\n";
+			system("pause");
+			exit(1);
+		}
+
 	}
 
 	return result;
 }
+
 
 
 
