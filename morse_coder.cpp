@@ -100,6 +100,8 @@ void morse_coder::place_Node(const char value,MBTNode<char>* local_root,std::str
 }
 
 
+//COMPLEXITY:
+//BIG-O = O(NLOG(N)) WHERE N == # OF LETTERS IN CODE
 std::string morse_coder::encode(const std::string& input){
 	std::string result;
 	std::istringstream tokens(input);
