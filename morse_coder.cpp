@@ -114,3 +114,27 @@ std::string morse_coder::encode(const std::string& input){
 
 	return result;
 }
+
+
+
+//THIS IS FOR FUN:
+/*
+	I WANT TO IMPLEMENT A FUNCTION THAT CAN READ
+	AN INPUT STRING WHICH IS A MIX OF MORSE CODE
+	AND NORMAL ENGLISH LETTERING
+
+	@ASSUMPTION: all chars are separated by spaces.
+*/
+std::string morse_coder::translate(const std::string input) {
+	std::string holder;
+	std::istringstream tokens(input);
+	std::string s;
+	while (tokens >> s) {
+		if (s.length() == 1 && s[0] != '.' && s[0] != '_')
+			holder += encode(s);
+		else
+			holder += decode(s);
+		holder += ' ';
+	}
+	return holder;
+}
